@@ -39,6 +39,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Dependency src directories
+src/components/
+
 # Typescript v1 declaration files
 typings/
 
