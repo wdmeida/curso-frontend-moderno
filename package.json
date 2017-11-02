@@ -1,0 +1,32 @@
+{
+  "name": "portifolio-wagner-almeida",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido no Curso de Frontend Moderno da Udemy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" &amo;&amo; exit 1",
+    "start": "echo startando",
+    "prestart": "echo prestart",
+    "poststart": "echo post start",
+    "preinstall": "mkdirp src/components/bootstrap/ src/components/font-awesome/",
+    "postinstall": "cp -r node_modules/bootstrap/dist src/components/bootstrap/ && cp -r node_modules/font-awesome/css src/components/font-awesome/ && cp -r node_modules/font-awesome/fonts src/components/font-awesome/",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wdmeida/curso-frontend-moderno.git"
+  },
+  "author": "Wagner Almeida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wdmeida/curso-frontend-moderno/issues"
+  },
+  "homepage": "https://github.com/wdmeida/curso-frontend-moderno#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {
+    "mkdirp": "^0.5.1"
+  }
+}
