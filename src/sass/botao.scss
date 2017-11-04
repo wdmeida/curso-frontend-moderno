@@ -1,0 +1,25 @@
+$cor: orange;
+
+body {
+  background: $cor;
+}
+
+@mixin botao {
+  display: inline-block;
+  border-radius: 15px;
+  padding: 15px;
+  border: none;
+  font-size: 1.5em;
+}
+
+.botao-primary {
+  @include botao;
+  color: white;
+  background: #1554cb;  
+}
+
+.botao-danger {
+  @include botao;
+  color: white;
+  background: chocolate;
+}

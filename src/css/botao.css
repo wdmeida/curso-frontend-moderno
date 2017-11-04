@@ -1,0 +1,20 @@
+body {
+  background: orange; }
+
+.botao-primary {
+  display: inline-block;
+  border-radius: 15px;
+  padding: 15px;
+  border: none;
+  font-size: 1.5em;
+  color: white;
+  background: #1554cb; }
+
+.botao-danger {
+  display: inline-block;
+  border-radius: 15px;
+  padding: 15px;
+  border: none;
+  font-size: 1.5em;
+  color: white;
+  background: red; }
