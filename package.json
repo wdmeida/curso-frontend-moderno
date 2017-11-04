@@ -5,12 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" &amo;&amo; exit 1",
-    "start": "echo startando",
-    "prestart": "echo prestart",
-    "poststart": "echo post start",
     "preinstall": "mkdirp src/components/bootstrap/ src/components/font-awesome/",
     "postinstall": "cp -r node_modules/bootstrap/dist src/components/bootstrap/ && cp -r node_modules/font-awesome/css src/components/font-awesome/ && cp -r node_modules/font-awesome/fonts src/components/font-awesome/",
-    "gulp": "gulp"
+    "nodesass": "node-sass"
   },
   "repository": {
     "type": "git",
@@ -27,6 +24,7 @@
     "font-awesome": "^4.7.0"
   },
   "devDependencies": {
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.6.0"
   }
 }
