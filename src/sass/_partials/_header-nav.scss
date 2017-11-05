@@ -1,3 +1,26 @@
 .header-nav {
   background-color: lighten($main-color, 10%);
+
+  &__logo {
+    display: inline-block;
+    max-width: 350px;
+    position: relative;
+    top: 10px;
+  }
+
+  &__hamburgger {
+    display: none;
+  }
+
+  &__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: white;
+      display: block;
+      font-size: 1.5em;
+    }
+  }
 }
