@@ -1,5 +1,26 @@
 .header-animado {
   $h: 300px;
   background-color: $main-color;
-  height: $h;
+  padding-top: 96px;
+
+  //&__title - Modificado por causa da especificidade do bootstrap.
+  .header-animado__title {
+    color: #00151A;
+    font-size: 38px;
+    font-weight: bold;
+  }
+
+  .header-animado__subtitle {
+    color: white;
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  &__ilustra {
+    background-image: url('../../src/imagens/cenario_all_960.png');
+    height: $h/2;
+    background-size: auto 100%;
+    background-position: center top;
+  }
 }
