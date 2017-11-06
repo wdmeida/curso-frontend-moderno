@@ -2,6 +2,8 @@
   $h: 300px;
   background-color: $main-color;
   padding-top: 96px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 
   //&__title - Modificado por causa da especificidade do bootstrap.
   .header-animado__title {
