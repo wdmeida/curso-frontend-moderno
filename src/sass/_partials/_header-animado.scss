@@ -20,9 +20,36 @@
   }
 
   &__ilustra {
-    background-image: url('../../src/imagens/cenario_all_960.png');
+    background-image: url(../imagens/cenario_all_960.png);
     height: $h/2;
     background-size: auto 100%;
     background-position: center top;
+
+    & > div {
+      display: none;
+    }
+
+    @media screen and (min-width: 480px) {
+      background-image: url(../imagens/cenario_all_1530.png);
+    }
+
+    @media screen and (min-width: 960px) {
+      background-image: url(../imagens/cenario_bg.png);
+      height: $h;
+      position: relative;
+
+      & > div {
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .nuvens {
+        background-image: url(../imagens/cenario_nuvens.png);
+      }
+    }
   }
 }

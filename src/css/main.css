@@ -18,10 +18,29 @@ h1, h2, h3, h4, h5, h6, .title {
     font-weight: 300;
     line-height: 1.5; }
   .header-animado__ilustra {
-    background-image: url("../../src/imagens/cenario_all_960.png");
+    background-image: url(../imagens/cenario_all_960.png);
     height: 150px;
     background-size: auto 100%;
     background-position: center top; }
+    .header-animado__ilustra > div {
+      display: none; }
+    @media screen and (min-width: 480px) {
+      .header-animado__ilustra {
+        background-image: url(../imagens/cenario_all_1530.png); } }
+    @media screen and (min-width: 960px) {
+      .header-animado__ilustra {
+        background-image: url(../imagens/cenario_bg.png);
+        height: 300px;
+        position: relative; }
+        .header-animado__ilustra > div {
+          display: block;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0; }
+        .header-animado__ilustra .nuvens {
+          background-image: url(../imagens/cenario_nuvens.png); } }
 
 .header-nav {
   background-color: #84b8af; }
