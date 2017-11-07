@@ -1,5 +1,7 @@
 .header-animado {
   $h: 300px;
+  $largura_cenario: 2400px;
+
   background-color: $main-color;
   padding-top: 96px;
   margin-bottom: 0;
@@ -29,6 +31,21 @@
       display: none;
     }
 
+    @mixin anima($imagem, $tipo_anima: '90s linear infinite reverse') {
+      background-image: url(../imagens/#{$imagem});
+      animation: anima_cenario #{$tipo_anima};
+    }
+
+    // Image Animations Config
+    @keyframes anima_cenario {
+      from {
+        transform: translateX(-50%) translateZ(0);
+      }
+      to {
+        transform: translateX(0) translateZ(0);
+      }
+    }
+
     @media screen and (min-width: 480px) {
       background-image: url(../imagens/cenario_all_1530.png);
     }
@@ -44,11 +61,28 @@
         position: absolute;
         top: 0;
         left: 0;
-        right: 0;
+
+        width: $largura_cenario * 2;
       }
 
-      .nuvens {
-        background-image: url(../imagens/cenario_nuvens.png);
+      // Set maps to animations.
+      $items: (
+        nuvens: null,
+        casas: '30s linear infinite reverse',
+        rua: '30s linear infinite reverse',
+        carrosCima: '15s linear infinite reverse',
+        carrosBaixo: '15s linear infinite'
+      );
+
+      @each $key, $value in $items {
+        
+        @if $value {
+          .#{$key} {
+            @include anima('cenario_#{$key}.png', $value);
+          }
+        } @else {
+          @include anima('cenario_#{$key}.png');          
+        }
       }
     }
   }
