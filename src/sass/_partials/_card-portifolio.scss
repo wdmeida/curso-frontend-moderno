@@ -1,0 +1,40 @@
+.card-portifolio {
+  padding: 0;
+  border-radius: 0;
+  border: 1px solid transparent;
+  position: relative;
+
+  &__imagem {
+    height: 230px;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+      opacity: .5;
+      transition: opacity .3s linear;
+    }
+  }
+
+  &:hover {
+    img {
+      opacity: 1;
+    }
+
+    .card-portifolio__btn {
+      background: saturate($main-color, 10);
+
+      &:hover {
+        background: saturate($main-color, 30);
+      }
+    }
+  }
+
+  &__btn {
+    background: transparent;
+    display: block;
+    border: none;
+    border-radius: 0;
+    width: 100px;
+    transition: background .3s linear;
+  }
+}
