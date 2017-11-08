@@ -111,6 +111,28 @@ h1, h2, h3, h4, h5, h6, .title {
   border-radius: 0;
   border: 1px solid transparent;
   position: relative; }
+  .card-portifolio:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background: #777;
+    width: 50%;
+    height: 20px;
+    bottom: 12px;
+    box-shadow: 0 15px 10px #777;
+    transform: rotate(-3deg);
+    left: 5px; }
+  .card-portifolio:after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background: #777;
+    width: 50%;
+    height: 20px;
+    bottom: 12px;
+    box-shadow: 0 15px 10px #777;
+    transform: rotate(3deg);
+    right: 5px; }
   .card-portifolio__imagem {
     height: 230px;
     overflow: hidden; }
@@ -121,13 +143,15 @@ h1, h2, h3, h4, h5, h6, .title {
   .card-portifolio:hover img {
     opacity: 1; }
   .card-portifolio:hover .card-portifolio__btn {
-    background: #58b1a2; }
+    background: #c5ddd9;
+    color: #fff; }
     .card-portifolio:hover .card-portifolio__btn:hover {
       background: #3fcab2; }
   .card-portifolio__btn {
     background: transparent;
+    color: #64a59a;
     display: block;
     border: none;
     border-radius: 0;
     width: 100px;
-    transition: background .3s linear; }
+    transition: all .3s linear; }

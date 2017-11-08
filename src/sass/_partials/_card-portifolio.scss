@@ -1,4 +1,31 @@
 .card-portifolio {
+
+  @mixin sombra($direction, $angle, $distance) {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background: #777;
+    width: 50%;
+    height: 20px;
+    bottom: 12px;
+    box-shadow: 0 15px 10px #777;
+    @if $direction == 'esq' {
+      transform: rotate($angle * -1);
+      left: $distance;      
+    } @else {
+      transform: rotate($angle);
+      right: $distance;      
+    }
+  }
+
+  &:before {
+    @include sombra('esq',3deg, 5px);
+  }
+
+  &:after {
+    @include sombra('dir',3deg, 5px);    
+  }
+
   padding: 0;
   border-radius: 0;
   border: 1px solid transparent;
@@ -21,7 +48,8 @@
     }
 
     .card-portifolio__btn {
-      background: saturate($main-color, 10);
+      background: lighten($main-color, 30);
+      color: #fff;
 
       &:hover {
         background: saturate($main-color, 30);
@@ -31,10 +59,11 @@
 
   &__btn {
     background: transparent;
+    color: $main-color;
     display: block;
     border: none;
     border-radius: 0;
     width: 100px;
-    transition: background .3s linear;
+    transition: all .3s linear;
   }
 }
