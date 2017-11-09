@@ -3,12 +3,12 @@
   color: white;
   padding: 1em 0;
 
-  ul {
+  &__lista {
     overflow: auto;
     padding: 0;
     width: 100%;
 
-    li {
+    &-item {
       width: 20%;
       float: left;
       box-sizing: border-box;
@@ -16,7 +16,7 @@
       padding: 0;
     }
 
-    li a {
+    &-link {
       font-size: 1.5em;
       color: white;
       display: block;

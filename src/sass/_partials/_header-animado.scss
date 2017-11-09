@@ -26,6 +26,7 @@
     height: $h/2;
     background-size: auto 100%;
     background-position: center top;
+    overflow: hidden;
 
     & > div {
       display: none;
