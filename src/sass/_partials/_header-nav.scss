@@ -1,6 +1,22 @@
+.js.menu-opened {
+  overflow: hidden;
+  &:after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: rgba(0, 0, 0, .5);
+  }
+}
+
 .header-nav {
 
   $h: 50px;
+  $breakpoint: 680px;
 
   background-color: lighten($main-color, 10%);
 
@@ -18,7 +34,7 @@
     height: $h;
     position: relative;
     top: 10px;
-    z-index: 2;
+    z-index: 20;
 
     img {
       max-width: 100%;
@@ -42,6 +58,10 @@
       &:hover, &:focus {
         background: lighten($main-color, 5%);
       }
+
+      @media screen and (min-width: #{$breakpoint}) {
+        display: none;
+      }
     }
   }
 
@@ -63,12 +83,45 @@
     }
 
     .js & {
-      display: none;
+      @media screen and (max-width: #{$breakpoint}){
+        background: darken($main-color, 10);
+        position: fixed;
+        z-index: 10;
+        top: $h;
+        left: -100%;
+        width: 80%;
+        bottom: 0;
+        transition: left .3s ease-out;
+      }
     }
 
-    .menu-openned & {
+    .menu-opened & {
       display: block;
+
+      @media screen and (max-width: #{$breakpoint}){
+        left: 0;
+      }
     }
 
+    @media screen and (min-width: #{$breakpoint}){
+      display: inline-block;
+      float: right;
+      height: $h;
+
+      li {
+        display: inline-block;
+
+        a {
+          border-top: none;
+          transition: all .3s ease-in-out;
+          padding: 15px;
+
+          &:hover {
+            transform: translateY(.5em);
+            box-shadow: 0 5px 15px -10px black;
+          }
+        }
+      }
+    }
   }
 }
