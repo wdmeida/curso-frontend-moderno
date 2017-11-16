@@ -138,7 +138,14 @@ h1, h2, h3, h4, h5, h6, .title {
         float: right;
         height: 50px; }
         .header-nav__menu li {
-          display: inline-block; } }
+          display: inline-block; }
+          .header-nav__menu li a {
+            border-top: none;
+            transition: all .3s ease-in-out;
+            padding: 15px; }
+            .header-nav__menu li a:hover {
+              transform: translateY(0.5em);
+              box-shadow: 0 5px 15px -10px black; } }
 
 .card-portifolio {
   padding: 0;
