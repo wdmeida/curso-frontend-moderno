@@ -1,3 +1,18 @@
+.js.menu-opened {
+  overflow: hidden;
+  &:after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: rgba(0, 0, 0, .5);
+  }
+}
+
 .header-nav {
 
   $h: 50px;
@@ -19,7 +34,7 @@
     height: $h;
     position: relative;
     top: 10px;
-    z-index: 2;
+    z-index: 20;
 
     img {
       max-width: 100%;
@@ -74,7 +89,7 @@
         z-index: 10;
         top: $h;
         left: -100%;
-        width: 100%;
+        width: 80%;
         bottom: 0;
         transition: left .3s ease-out;
       }

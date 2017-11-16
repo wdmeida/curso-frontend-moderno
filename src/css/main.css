@@ -61,6 +61,18 @@ h1, h2, h3, h4, h5, h6, .title {
           background-image: url(../imagens/cenario_carrosBaixo.png);
           animation: anima_cenario 15s linear infinite; } }
 
+.js.menu-opened {
+  overflow: hidden; }
+  .js.menu-opened:after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5); }
+
 .header-nav {
   background-color: #84b8af; }
   .js .header-nav {
@@ -73,7 +85,7 @@ h1, h2, h3, h4, h5, h6, .title {
     height: 50px;
     position: relative;
     top: 10px;
-    z-index: 2; }
+    z-index: 20; }
     .header-nav__logo img {
       max-width: 100%;
       height: 100%; }
@@ -112,7 +124,7 @@ h1, h2, h3, h4, h5, h6, .title {
         z-index: 10;
         top: 50px;
         left: -100%;
-        width: 100%;
+        width: 80%;
         bottom: 0;
         transition: left .3s ease-out; } }
     .menu-opened .header-nav__menu {
