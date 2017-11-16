@@ -1,6 +1,7 @@
 .header-nav {
 
   $h: 50px;
+  $breakpoint: 680px;
 
   background-color: lighten($main-color, 10%);
 
@@ -42,6 +43,10 @@
       &:hover, &:focus {
         background: lighten($main-color, 5%);
       }
+
+      @media screen and (min-width: #{$breakpoint}) {
+        display: none;
+      }
     }
   }
 
@@ -63,12 +68,34 @@
     }
 
     .js & {
-      display: none;
+      @media screen and (max-width: #{$breakpoint}){
+        background: darken($main-color, 10);
+        position: fixed;
+        z-index: 10;
+        top: $h;
+        left: -100%;
+        width: 100%;
+        bottom: 0;
+        transition: left .3s ease-out;
+      }
     }
 
     .menu-opened & {
       display: block;
+
+      @media screen and (max-width: #{$breakpoint}){
+        left: 0;
+      }
     }
 
+    @media screen and (min-width: #{$breakpoint}){
+      display: inline-block;
+      float: right;
+      height: $h;
+
+      li {
+        display: inline-block;
+      }
+    }
   }
 }
