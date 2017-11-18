@@ -12,24 +12,8 @@
   </head>
   
   <body>
-    <nav class="header-nav">
-      <div class="container">
-        <a href="index.html" class="header-nav__logo">
-          <img src="./imagens/logo.svg" alt="Logotipo Silvia Silveira">
-        </a>
-        <button aria-controls="mainMenu" class="header-nav__hamburgger" type="button" aria-expanded="false">
-          <div class="header-nav__hamburggerParties">
-            <span class="sr-only">Menu</span>
-            <i class="fa fa-bars" aria-hidden="true"></i>
-          </div>
-        </button>
-        <ul class="header-nav__menu" id="mainMenu" aria-expanded="false">
-          <li><a href="#">Portifólio</a></li>
-          <li><a href="#">Sobre mim</a></li>
-          <li><a href="#">Contato</a></li>
-        </ul>
-      </div>
-    </nav>
+
+    @@include('./inc/nav.html')
     
     <div class="jumbotron header-animado">
       <div class="container">
@@ -52,81 +36,36 @@
         <div class="col-xs-12">
           <h2>Últimos Trabalhos</h2>
         </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="thumbnail card-portifolio">
-            <h3 class="card-portifolio__title">Título do trabalho</h3>
-            <div class="card-portifolio__imagem">
-              <img src="./imagens/portfolio/01.jpg" alt="Texto alternativo">
-            </div>
-            <div class="caption card-portifolio__caption">
-              <p class="card-portifolio__text">Pequeno texto</p>
-            </div>
-            <a href="#" class="card-portifolio__btn btn btn-primary" role="button">Ver mais</a>
-          </div>
-        </div>
         
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="thumbnail card-portifolio">
-            <h3 class="card-portifolio__title">Título do trabalho</h3>
-            <div class="card-portifolio__imagem">
-              <img src="./imagens/portfolio/02.jpg" alt="Texto alternativo">
-            </div>
-            <div class="caption card-portifolio__caption">
-              <p class="card-portifolio__text">Pequeno texto</p>
-            </div>
-            <a href="#" class="card-portifolio__btn btn btn-primary" role="button">Ver mais</a>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="thumbnail card-portifolio">
-            <h3 class="card-portifolio__title">Título do trabalho</h3>
-            <div class="card-portifolio__imagem">
-              <img src="./imagens/portfolio/03.jpg" alt="Texto alternativo">
-            </div>
-            <div class="caption card-portifolio__caption">
-              <p class="card-portifolio__text">Pequeno texto</p>
-            </div>
-            <a href="#" class="card-portifolio__btn btn btn-primary" role="button">Ver mais</a>
-          </div>
-        </div>
+        @@loop('./inc/card-portifolio.html', [
+          {
+            "titulo" : "Título alterado",
+            "imagem" : "./imagens/portfolio/01.jpg",
+            "texto" : "Texto",
+            "link" : "#",
+            "alt" : "Texto alternativo"
+          },
+          {
+            "titulo" : "Titulo alterado 2",
+            "imagem" : "./imagens/portfolio/02.jpg",
+            "texto" : "Texto",
+            "link" : "#",
+            "alt" : "Texto alternativo"
+          },
+          {
+            "titulo" : "Titulo alterado 3",
+            "imagem" : "./imagens/portfolio/03.jpg",
+            "texto" : "Texto",
+            "link" : "#",
+            "alt" : "Texto alternativo"
+          }
+        ])
+        
       </div> <!-- row -->
       <hr>
     </div> <!-- container -->
     
-    <footer class="rodape">
-      <div class="container">
-        <p class="text-right">Social:</p>
-        <ul class="list-inline pull-right rodape__lista">
-          <li class="rodape__lista-item">
-            <a href="#" class="btn-social btn-outline rodape__lista-link">
-              <i class="fa fa-fw fa-facebook" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li class="rodape__lista-item">
-            <a href="#" class="btn-social btn-outline rodape__lista-link">
-              <i class="fa fa-fw fa-google-plus" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li class="rodape__lista-item">
-            <a href="#" class="btn-social btn-outline rodape__lista-link">
-              <i class="fa fa-fw fa-twitter" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li class="rodape__lista-item">
-            <a href="#" class="btn-social btn-outline rodape__lista-link">
-              <i class="fa fa-fw fa-linkedin" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li class="rodape__lista-item">
-            <a href="#" class="btn-social btn-outline rodape__lista-link">
-              <i class="fa fa-fw fa-dribbble" aria-hidden="true"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+    @@include('./inc/footer.html')
 
     <script src="./javascript/main.js"></script>
     <script src="./javascript/menu.js"></script>
