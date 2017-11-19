@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6, .title {
 .header-animado {
   background-color: #64a59a;
   padding-top: 96px;
-  margin-bottom: 0;
+  margin-bottom: 32px;
   padding-bottom: 0; }
   .header-animado .header-animado__title {
     color: #00151A;
@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6, .title {
   from {
     transform: translateX(-50%) translateZ(0); }
   to {
-    transform: translateX(0) translateZ(0); } }
+    transform: translateX(0%) translateZ(0); } }
     @media screen and (min-width: 480px) {
       .header-animado__ilustra {
         background-image: url(../imagens/cenario_all_1530.png); } }
