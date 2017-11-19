@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Site pessoal Silva Silveira</title>
+
+    <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+  
+  <body>
+
+    @@include('./inc/nav.html')
+    
+    <div class="jumbotron header-animado">
+      <div class="container">
+        <p class="header-animado__title">Vamos bater um papo?</p>
+        <h1 class="header-animado__subtitle">Entre em contato que eu responderei o mais rápido possível!</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+          
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="textNome">Nome</label>
+              <input type="text" class="form-control" id="textNome" placeholder="Nome Completo">
+            </div>
+            <div class="form-group">
+              <label for="textEmail">Email</label>
+              <input type="email" class="form-control" id="textEmail" placeholder="Digite um e-mail">
+            </div>
+            <div class="form-group">
+              <label for="textMessage">Mensagem</label>
+              <textarea id="textMessage" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-lg">Enviar</button>
+            </div>
+          </form>
+
+        </div>
+      </div> <!-- row -->
+      <hr>
+
+    </div> <!-- container -->
+    
+    @@include('./inc/footer.html')
+
+    <script src="./javascript/main.js"></script>
+    <script src="./javascript/menu.js"></script>
+  </body>
+</html>

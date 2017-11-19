@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Site pessoal Silva Silveira</title>
+
+    <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+  
+  <body>
+
+    @@include('./inc/nav.html')
+    
+    <div class="jumbotron header-animado">
+      <div class="container">
+        <p class="header-animado__title">O que ando fazendo</p>
+        <h1 class="header-animado__subtitle">Veja alguns dos meus trabalhos</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Últimos Trabalhos</h2>
+        </div>
+        
+        @@loop('./inc/card-portifolio.html', [
+          {
+            "titulo" : "Título alterado",
+            "imagem" : "./imagens/portfolio/01.jpg",
+            "texto" : "Texto",
+            "link" : "#",
+            "alt" : "Texto alternativo"
+          },
+          {
+            "titulo" : "Titulo alterado 2",
+            "imagem" : "./imagens/portfolio/02.jpg",
+            "texto" : "Texto",
+            "link" : "#",
+            "alt" : "Texto alternativo"
+          },
+          {
+            "titulo" : "Titulo alterado 3",
+            "imagem" : "./imagens/portfolio/03.jpg",
+            "texto" : "Texto",
+            "link" : "#",
+            "alt" : "Texto alternativo"
+          },
+          {
+            "titulo" : "Título alterado 4",
+            "imagem" : "./imagens/portfolio/04.jpg",
+            "texto" : "Texto",
+            "link" : "#",
+            "alt" : "Texto alternativo"
+          },
+          {
+            "titulo" : "Titulo alterado 5",
+            "imagem" : "./imagens/portfolio/05.jpg",
+            "texto" : "Texto",
+            "link" : "#",
+            "alt" : "Texto alternativo"
+          },
+          {
+            "titulo" : "Titulo alterado 6",
+            "imagem" : "./imagens/portfolio/06.jpg",
+            "texto" : "Texto",
+            "link" : "#",
+            "alt" : "Texto alternativo"
+          }
+        ])
+        
+      </div> <!-- row -->
+      <hr>
+    </div> <!-- container -->
+    
+    @@include('./inc/footer.html')
+
+    <script src="./javascript/main.js"></script>
+    <script src="./javascript/menu.js"></script>
+  </body>
+</html>
