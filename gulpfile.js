@@ -27,7 +27,7 @@ gulp.task('sass', function() {
 })
 
 gulp.task('html', function() {
-  return gulp.src('./src/index.html')
+  return gulp.src('./src/**/*.html')
              .pipe(include())
              .pipe(gulp.dest('./dist/'))
 })
