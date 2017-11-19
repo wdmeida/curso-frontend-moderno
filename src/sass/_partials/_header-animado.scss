@@ -7,7 +7,6 @@
   margin-bottom: 32px;
   padding-bottom: 0;
 
-  //&__title - Modificado por causa da especificidade do bootstrap.
   .header-animado__title {
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     color: #00151A;
@@ -42,10 +41,10 @@
 
     // Image Animations Config
     @keyframes anima_cenario {
-      from {
+      from{
         transform: translateX(-50%) translateZ(0);
       }
-      to {
+      to{
         transform: translateX(0%) translateZ(0);
       }
     }
@@ -85,7 +84,9 @@
             @include anima('cenario_#{$key}.png', $value);
           }
         } @else {
-          @include anima('cenario_#{$key}.png');          
+          .#{$key} {
+            @include anima('cenario_#{$key}.png');            
+          }
         }
       }
     }
