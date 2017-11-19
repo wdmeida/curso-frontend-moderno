@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     include = require('gulp-file-include'),
     clean = require('gulp-clean'),
+    uncss = require('gulp-uncss'),
     autoPrefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync');
 
@@ -34,7 +35,15 @@ gulp.task('html', function() {
              .pipe(gulp.dest('./dist/'))
 })
 
-gulp.task('server', ['html'], function() {
+gulp.task('uncss', ['html'], function() {
+  return gulp.src('./dist/components/**/*.css')
+             .pipe(uncss({
+               html: ['./dist/*.html']
+             }))
+             .pipe(gulp.dest('./dist/components/'))
+})
+
+gulp.task('server', ['uncss'], function() {
   browserSync.init({
     server: {
       baseDir: 'dist'
