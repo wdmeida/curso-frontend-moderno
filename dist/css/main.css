@@ -41,9 +41,7 @@ h1, h2, h3, h4, h5, h6, .title {
       .header-animado__ilustra {
         background-image: url(../imagens/cenario_bg.png);
         height: 300px;
-        position: relative;
-        background-image: url(../imagens/cenario_nuvens.png);
-        animation: anima_cenario 90s linear infinite reverse; }
+        position: relative; }
         .header-animado__ilustra > div {
           display: block;
           height: 100%;
@@ -51,6 +49,9 @@ h1, h2, h3, h4, h5, h6, .title {
           top: 0;
           left: 0;
           width: 4800px; }
+        .header-animado__ilustra .nuvens {
+          background-image: url(../imagens/cenario_nuvens.png);
+          animation: anima_cenario 90s linear infinite reverse; }
         .header-animado__ilustra .casas {
           background-image: url(../imagens/cenario_casas.png);
           animation: anima_cenario 30s linear infinite reverse; }
