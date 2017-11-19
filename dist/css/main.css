@@ -9,14 +9,17 @@ h1, h2, h3, h4, h5, h6, .title {
   margin-bottom: 32px;
   padding-bottom: 0; }
   .header-animado .header-animado__title {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     color: #00151A;
     font-size: 38px;
     font-weight: bold; }
   .header-animado .header-animado__subtitle {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     color: white;
     font-size: 34px;
     font-weight: 300;
-    line-height: 1.5; }
+    line-height: 1.5;
+    margin-bottom: 2em; }
   .header-animado__ilustra {
     background-image: url(../imagens/cenario_all_960.png);
     height: 150px;
@@ -188,7 +191,7 @@ h1, h2, h3, h4, h5, h6, .title {
     background: #c5ddd9;
     color: #fff; }
     .card-portifolio:hover .card-portifolio__btn:hover {
-      background: #3fcab2; }
+      background-color: #3fcab2; }
   .card-portifolio__btn {
     background: transparent;
     color: #64a59a;
