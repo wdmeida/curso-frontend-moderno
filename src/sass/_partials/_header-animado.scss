@@ -4,21 +4,24 @@
 
   background-color: $main-color;
   padding-top: 96px;
-  margin-bottom: 0;
+  margin-bottom: 32px;
   padding-bottom: 0;
 
   //&__title - Modificado por causa da especificidade do bootstrap.
   .header-animado__title {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     color: #00151A;
     font-size: 38px;
     font-weight: bold;
   }
 
   .header-animado__subtitle {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     color: white;
     font-size: 34px;
     font-weight: 300;
     line-height: 1.5;
+    margin-bottom: 2em;
   }
 
   &__ilustra {
@@ -28,7 +31,7 @@
     background-position: center top;
     overflow: hidden;
 
-    & > div {
+    &>div {
       display: none;
     }
 
@@ -43,7 +46,7 @@
         transform: translateX(-50%) translateZ(0);
       }
       to {
-        transform: translateX(0) translateZ(0);
+        transform: translateX(0%) translateZ(0);
       }
     }
 
@@ -56,7 +59,7 @@
       height: $h;
       position: relative;
 
-      & > div {
+      &>div {
         display: block;
         height: 100%;
         position: absolute;
