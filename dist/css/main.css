@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5, h6, .title {
     background: #c5ddd9;
     color: #fff; }
     .card-portifolio:hover .card-portifolio__btn:hover {
-      background: #3fcab2; }
+      background-color: #3fcab2; }
   .card-portifolio__btn {
     background: transparent;
     color: #64a59a;
