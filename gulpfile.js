@@ -6,12 +6,14 @@ var gulp = require('gulp'),
     autoPrefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync');
 
+// Clean directory
 gulp.task('clean', function() {
   // stream
   return gulp.src('dist')
              .pipe(clean())
 })
 
+// Copy files of src directory to dist
 gulp.task('copy', ['clean'], function() {
   gulp.src([
     'src/components/**/*',
@@ -22,6 +24,7 @@ gulp.task('copy', ['clean'], function() {
       .pipe(gulp.dest('dist'))
 })
 
+// Compile sass files
 gulp.task('sass', function() {
   gulp.src('./src/sass/**/*.scss')
       .pipe(sass())
@@ -29,12 +32,14 @@ gulp.task('sass', function() {
       .pipe(gulp.dest('./dist/css'));
 })
 
+// Include templates in html files
 gulp.task('html', function() {
   return gulp.src('./src/**/*.html')
              .pipe(include())
              .pipe(gulp.dest('./dist/'))
 })
 
+// Clears unused bootstrap and font-awesome classes
 gulp.task('uncss', ['html'], function() {
   return gulp.src('./dist/components/**/*.css')
              .pipe(uncss({
@@ -43,6 +48,7 @@ gulp.task('uncss', ['html'], function() {
              .pipe(gulp.dest('./dist/components/'))
 })
 
+// Initializes a server that monitors changes.
 gulp.task('server', ['uncss'], function() {
   browserSync.init({
     server: {
