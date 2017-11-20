@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     uncss = require('gulp-uncss'),
     autoPrefixer = require('gulp-autoprefixer'),
+    imagemin = require('gulp-imagemin'),
     browserSync = require('browser-sync');
 
 // Clean directory
@@ -17,9 +18,7 @@ gulp.task('clean', function() {
 gulp.task('copy', ['clean'], function() {
   gulp.src([
     'src/components/**/*',
-    'src/css/**/*',
-    'src/javascript/**/*',
-    'src/imagens/**/*'
+    'src/javascript/**/*'
   ], {'base': 'src'})
       .pipe(gulp.dest('dist'))
 })
@@ -48,8 +47,15 @@ gulp.task('uncss', ['html'], function() {
              .pipe(gulp.dest('./dist/components/'))
 })
 
-// Initializes a server that monitors changes.
-gulp.task('server', ['uncss'], function() {
+// Compressed images files
+gulp.task('imagemin', function() {
+  return gulp.src('./src/imagens/**/*')
+             .pipe(imagemin())
+             .pipe(gulp.dest('./dist/imagens'))
+})
+
+// Initializes a server that monitors changes
+gulp.task('server', ['uncss', 'imagemin', 'sass', 'copy'], function() {
   browserSync.init({
     server: {
       baseDir: 'dist'

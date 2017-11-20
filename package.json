@@ -29,6 +29,7 @@
     "gulp-autoprefixer": "^4.0.0",
     "gulp-clean": "^0.3.2",
     "gulp-file-include": "^1.2.0",
+    "gulp-imagemin": "^4.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-uncss": "^1.0.6",
     "mkdirp": "^0.5.1"
