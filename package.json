@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" &amo;&amo; exit 1",
-    "preinstall": "mkdirp src/components/bootstrap/ src/components/font-awesome/",
-    "postinstall": "cp -r node_modules/bootstrap/dist src/components/bootstrap/ && cp -r node_modules/font-awesome/css src/components/font-awesome/ && cp -r node_modules/font-awesome/fonts src/components/font-awesome/",
+    "preinstall": "mkdirp src/components/bootstrap/",
+    "postinstall": "cp -r node_modules/bootstrap/dist src/components/bootstrap/",
     "gulp": "gulp"
   },
   "repository": {
@@ -20,15 +20,21 @@
   },
   "homepage": "https://github.com/wdmeida/curso-frontend-moderno#readme",
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "font-awesome": "^4.7.0"
+    "bootstrap": "^3.3.7"
   },
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
     "gulp-file-include": "^1.2.0",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uncss": "^1.0.6",
     "mkdirp": "^0.5.1"
   }
 }
