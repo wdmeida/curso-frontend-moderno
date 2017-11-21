@@ -5,6 +5,9 @@ var gulp = require('gulp'),
     uncss = require('gulp-uncss'),
     autoPrefixer = require('gulp-autoprefixer'),
     imagemin = require('gulp-imagemin'),
+    concat = require('gulp-concat'),
+    cssnano = require('gulp-cssnano'),
+    uglify = require('gulp-uglify'),
     browserSync = require('browser-sync');
 
 // Clean directory
@@ -16,24 +19,27 @@ gulp.task('clean', function() {
 
 // Copy files of src directory to dist
 gulp.task('copy', ['clean'], function() {
-  gulp.src([
-    'src/components/**/*',
-    'src/javascript/**/*'
-  ], {'base': 'src'})
-      .pipe(gulp.dest('dist'))
+  return gulp.src([
+                    'src/components/**/*'
+                  ], {'base': 'src'})
+                      .pipe(gulp.dest('dist'))
 })
 
 // Compile sass files
 gulp.task('sass', function() {
-  gulp.src('./src/sass/**/*.scss')
+  return gulp.src('./src/sass/**/*.scss')
       .pipe(sass())
       .pipe(autoPrefixer())
+      .pipe(cssnano())
       .pipe(gulp.dest('./dist/css'));
 })
 
 // Include templates in html files
 gulp.task('html', function() {
-  return gulp.src('./src/**/*.html')
+  return gulp.src([
+    './src/**/*.html',
+    '!./src/inc/**'
+  ])
              .pipe(include())
              .pipe(gulp.dest('./dist/'))
 })
@@ -54,8 +60,19 @@ gulp.task('imagemin', function() {
              .pipe(gulp.dest('./dist/imagens'))
 })
 
+gulp.task('build-js', function() {
+  return gulp.src('src/javascript/**/*')
+      .pipe(concat('app.min.js'))
+      .pipe(uglify())
+      .pipe(gulp.dest('./dist/javascript/'))
+})
+
+gulp.task('default', ['copy'], function() {
+  gulp.start('uncss', 'imagemin', 'sass', 'build-js')
+})
+
 // Initializes a server that monitors changes
-gulp.task('server', ['uncss', 'imagemin', 'sass', 'copy'], function() {
+gulp.task('server', function() {
   browserSync.init({
     server: {
       baseDir: 'dist'
@@ -66,4 +83,5 @@ gulp.task('server', ['uncss', 'imagemin', 'sass', 'copy'], function() {
 
   gulp.watch('./src/sass/**/*.scss', ['sass'])
   gulp.watch('./src/**/*.html', ['html'])
+  gulp.watch('src/javascript/**/*', ['build-js'])
 })
