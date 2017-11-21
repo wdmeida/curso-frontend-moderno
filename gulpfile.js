@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     cssnano = require('gulp-cssnano'),
     uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
     browserSync = require('browser-sync');
 
 // Clean directory
@@ -67,6 +68,15 @@ gulp.task('build-js', function() {
       .pipe(gulp.dest('./dist/javascript/'))
 })
 
+gulp.task('svgmin', function() {
+  return gulp.src(['./src/inc/icons/*.svg', '!./src/inc/icons/*.min.svg'])
+             .pipe(imagemin())
+             .pipe(rename({
+               suffix: '.min'
+             }))
+             .pipe(gulp.dest('./src/inc/icons/'))
+})
+
 gulp.task('default', ['copy'], function() {
   gulp.start('uncss', 'imagemin', 'sass', 'build-js')
 })
@@ -84,4 +94,8 @@ gulp.task('server', function() {
   gulp.watch('./src/sass/**/*.scss', ['sass'])
   gulp.watch('./src/**/*.html', ['html'])
   gulp.watch('src/javascript/**/*', ['build-js'])
+  gulp.watch([
+    './src/inc/icons/*.svg',
+    '!./src/inc/icons/*.min.svg'
+  ], ['svgmin'])
 })
